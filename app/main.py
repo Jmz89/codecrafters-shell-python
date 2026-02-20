@@ -5,7 +5,7 @@ def main():
     # TODO: Uncomment the code below to pass the first stage
      sys.stdout.write("$ ")
      user = input()
-     while(user != '1'):
+     while(user != "exit"):
         print(f"{user}: command not found")
         sys.stdout.write("$ ")
         user = input()
