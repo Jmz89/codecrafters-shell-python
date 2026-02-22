@@ -32,7 +32,7 @@ def main():
         if command_func:
             command_func(args)
         else:
-            print(f"{user_input} not found")
+            print(f"{user_input}: command not found")
             
 
 
