@@ -18,7 +18,6 @@ def type(args=""):
 
 #Exits the loop
 def exit(args=""):
-    print("Exiting")
     sys.exit(0)
 
 
