@@ -1,25 +1,40 @@
 import sys
 
+#Repeats what user said on a new line
 def echo(args=""):
     print(f"{args}")
     
-def Practice(args=""):
-    print("This a pa practice command")
+#Pracitce
+def practice(args=""):
+    print("This a practice command")
+
+#Checks to see if a command is a shell built in
+def type(args=""):
+    command_func = COMMAND.get(args.upper())
+    if command_func:
+        print(f"{args} is a shell builtin ")
+    else:
+        print(f"{args}: not found")
+
+#Exits the loop
+def exit(args=""):
+    print("Exiting")
+    sys.exit(0)
+
+
 
 #Dictionary of functions
 COMMAND = {
     "ECHO" : echo,
-    "PRACTICE" : Practice 
+    "PRACTICE" : practice, 
+    "TYPE" : type,
+    "EXIT" : exit
 }
 
 
 def main():
      while True:
         user_input = input("$ ").strip()
-
-        #exits the loop
-        if user_input.lower() == "exit":
-            break
 
         #Commands and functions
         parts = user_input.split(" ", 1)
