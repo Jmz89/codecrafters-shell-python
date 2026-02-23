@@ -28,6 +28,13 @@ def exit(args=""):
 def pwd(args=""):
     path = os.getcwd()
     print(path)
+
+def cd(args=""):
+    directory_path = args
+    if os.path.isdir(args):
+        os.chdir(args)
+    else:
+        print(f"{args} is not a directory")
     
 
 
@@ -39,7 +46,8 @@ COMMAND = {
     "PRACTICE" : practice, 
     "TYPE" : type,
     "EXIT" : exit,
-    "PWD" :pwd
+    "PWD" : pwd,
+    "CD" : cd
 }
 
 
