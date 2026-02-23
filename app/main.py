@@ -51,9 +51,7 @@ def main():
         if command_func:
             command_func(args)
         elif path := shutil.which(file_name):
-            arguments = [word for word in user_input.split(" ") if word != ""]
-            file = ",".join(arguments)
-            subprocess.run(file)
+            subprocess.run(user_input)
         else:
             print(f"{user_input}: command not found")
             
