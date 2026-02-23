@@ -2,14 +2,22 @@ import sys
 import shutil
 import subprocess
 import os
+import shlex
 
 #Repeats what user said on a new line
 def echo(args=""):
     if args.startswith("'") and args.endswith("'"):
-        print(f"{args.replace("'", "")}")
+        args = shlex.split(args)
+        args = " ".join(args)
+        print(f"{args}")
     else:
-        #args = " ".join(args.split())
+        args = shlex.split(args)
+        args = " ".join(args)
         print(f"{" ".join(args.split())}")
+
+def echo_test(args=""):
+     print("".join(args.split("''")))
+     
     
 #Pracitce
 def practice(args=""):
@@ -55,7 +63,8 @@ COMMAND = {
     "TYPE" : type,
     "EXIT" : exit,
     "PWD" : pwd,
-    "CD" : cd
+    "CD" : cd,
+    "TECHO" : echo_test
 }
 
 
