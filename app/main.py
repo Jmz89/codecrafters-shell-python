@@ -32,7 +32,6 @@ def pwd(args=""):
 def cd(args=""):
     directory_path = args
     if args == "~" :
-        print("home")
         Home = os.getenv('HOME') or os.getenv('USERPROFILE')
         os.chdir(Home)
         
