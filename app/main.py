@@ -42,7 +42,7 @@ def main():
         #Commands and functions
         parts = user_input.split(" ", 1)
         command_name = parts[0].upper()
-        file_name = user_input.split(" ", 1)
+        file_name = parts[0]
 
         #This gets the command and everything else after it, if needed
         args = parts[1] if len(parts) > 1 else ""
@@ -51,7 +51,7 @@ def main():
         if command_func:
             command_func(args)
         elif path := shutil.which(file_name):
-            subprocess.run(user_input)
+            subprocess.run(user_input.split())
         else:
             print(f"{user_input}: command not found")
             
