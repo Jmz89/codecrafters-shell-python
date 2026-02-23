@@ -1,4 +1,5 @@
 import sys
+import shutil
 
 #Repeats what user said on a new line
 def echo(args=""):
@@ -13,6 +14,8 @@ def type(args=""):
     command_func = COMMAND.get(args.upper())
     if command_func:
         print(f"{args} is a shell builtin ")
+    elif path := shutil.which(args):
+        print(f"{command_func} is {path} ")
     else:
         print(f"{args}: not found")
 
