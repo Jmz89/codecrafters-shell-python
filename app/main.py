@@ -1,5 +1,6 @@
 import sys
 import shutil
+import subprocess
 
 #Repeats what user said on a new line
 def echo(args=""):
@@ -48,6 +49,11 @@ def main():
         command_func = COMMAND.get(command_name)
         if command_func:
             command_func(args)
+        elif path := shutil.which(user_input):
+            arguments = [word for word in user_input.split(" ") if word != ""]
+            len(arguments)
+            file = ",".join(arguments)
+            subprocess.run(file)
         else:
             print(f"{user_input}: command not found")
             
