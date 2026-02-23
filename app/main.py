@@ -6,7 +6,7 @@ import os
 #Repeats what user said on a new line
 def echo(args=""):
     if args.startswith("'") and args.endswith("'"):
-        print(f"{args}")
+        print(f"{args.replace("'", "")}")
     else:
         #args = " ".join(args.split())
         print(f"{" ".join(args.split())}")
