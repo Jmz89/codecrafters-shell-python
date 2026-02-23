@@ -31,7 +31,12 @@ def pwd(args=""):
 
 def cd(args=""):
     directory_path = args
-    if os.path.isdir(args):
+    if args == "~" :
+        print("home")
+        Home = os.getenv('HOME') or os.getenv('USERPROFILE')
+        os.chdir(Home)
+        
+    elif os.path.isdir(args):
         os.chdir(args)
     else:
         print(f"cd: {args}: No such file or directory")
