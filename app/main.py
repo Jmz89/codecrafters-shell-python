@@ -5,7 +5,11 @@ import os
 
 #Repeats what user said on a new line
 def echo(args=""):
-    print(f"{args}")
+    if args.startswith("'") and args.endswith("'"):
+        print(f"{args}")
+    else:
+        #args = " ".join(args.split())
+        print(f"{" ".join(args.split())}")
     
 #Pracitce
 def practice(args=""):
