@@ -10,6 +10,9 @@ def echo(args=""):
     args = shlex.split(args)
     print(" ".join(args))
 
+def echo_test(args=""):
+     args = shlex.split(args)
+     print(" ".join(args))
     
 #Pracitce
 def practice(args=""):
