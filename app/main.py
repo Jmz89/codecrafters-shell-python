@@ -15,7 +15,7 @@ def type(args=""):
     if command_func:
         print(f"{args} is a shell builtin ")
     elif path := shutil.which(args):
-        print(f"{command_func} is {path} ")
+        print(f"{args} is {path} ")
     else:
         print(f"{args}: not found")
 
