@@ -6,19 +6,10 @@ import shlex
 
 #Repeats what user said on a new line
 def echo(args=""):
-    if args.startswith("'") and args.endswith("'"):
-        args = shlex.split(args)
-        args = " ".join(args)
-        print(f"{args}")
-    else:
-        args = shlex.split(args)
-        args = " ".join(args)
-        print(f"{" ".join(args.split())}")
+    #shlex splits up white spaces and handles '' when splitting
+    args = shlex.split(args)
+    print(" ".join(args))
 
-def echo_test(args=""):
-     args = shlex.split(args)
-     print(" ".join(args))
-     
     
 #Pracitce
 def practice(args=""):
