@@ -42,6 +42,7 @@ def main():
         #Commands and functions
         parts = user_input.split(" ", 1)
         command_name = parts[0].upper()
+        file_name = user_input.split(" ", 1)
 
         #This gets the command and everything else after it, if needed
         args = parts[1] if len(parts) > 1 else ""
@@ -49,9 +50,8 @@ def main():
         command_func = COMMAND.get(command_name)
         if command_func:
             command_func(args)
-        elif path := shutil.which(user_input):
+        elif path := shutil.which(file_name):
             arguments = [word for word in user_input.split(" ") if word != ""]
-            len(arguments)
             file = ", ".join(arguments)
             subprocess.run(file)
         else:
