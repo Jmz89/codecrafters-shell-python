@@ -16,7 +16,8 @@ def echo(args=""):
         print(f"{" ".join(args.split())}")
 
 def echo_test(args=""):
-     print("".join(args.split("''")))
+     args = shlex.split(args)
+     print(" ".join(args))
      
     
 #Pracitce
