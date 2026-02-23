@@ -1,6 +1,7 @@
 import sys
 import shutil
 import subprocess
+import os
 
 #Repeats what user said on a new line
 def echo(args=""):
@@ -24,6 +25,12 @@ def type(args=""):
 def exit(args=""):
     sys.exit(0)
 
+def pwd(args=""):
+    path = os.getcwd()
+    print(path)
+    
+
+
 
 
 #Dictionary of functions
@@ -31,7 +38,8 @@ COMMAND = {
     "ECHO" : echo,
     "PRACTICE" : practice, 
     "TYPE" : type,
-    "EXIT" : exit
+    "EXIT" : exit,
+    "PWD" :pwd
 }
 
 
@@ -42,6 +50,8 @@ def main():
         #Commands and functions
         parts = user_input.split(" ", 1)
         command_name = parts[0].upper()
+
+        #This gets only the file name
         file_name = parts[0]
 
         #This gets the command and everything else after it, if needed
