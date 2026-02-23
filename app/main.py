@@ -81,7 +81,7 @@ def main():
         if command_func:
             command_func(args)
         elif path := shutil.which(file_name):
-            subprocess.run(user_input.split())
+            subprocess.run(shlex.split(user_input))
         else:
             print(f"{user_input}: command not found")
             
