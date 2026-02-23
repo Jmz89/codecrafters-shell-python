@@ -34,7 +34,7 @@ def cd(args=""):
     if os.path.isdir(args):
         os.chdir(args)
     else:
-        print(f"{args} is not a directory")
+        print(f"cd: {args}: No such file or directory")
     
 
 
